@@ -27,7 +27,7 @@ import useDarkMode from "@/hooks/useDarkMode";
 import { ChevronLeft, Close, Information } from "@carbon/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
-import Laras from "@/components/atoms/Laras";
+import Bintang from "@/components/atoms/Bintang";
 import GiftBox from "@/components/atoms/Gift_box";
 import Envelope from "@/components/atoms/Envelope";
 extend(geometry);
@@ -127,7 +127,7 @@ const EnvelopeContent = (params: { handleClose: () => void }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="w-screen h-screen top-0 left-0 bg-black bg-opacity-50 fixed z-[150]"
+        className="w-screen !h-[100dvh] top-0 left-0 bg-black bg-opacity-50 fixed z-[150]"
       ></motion.div>
       <motion.div
         initial={{ y: "100%", x: "-50%" }}
@@ -192,7 +192,7 @@ const GiftContent = (params: { handleClose: () => void }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="w-screen h-screen top-0 left-0 bg-black bg-opacity-50 fixed z-[150]"
+        className="w-screen !h-[100dvh] top-0 left-0 bg-black bg-opacity-50 fixed z-[150]"
       ></motion.div>
 
       <motion.div
@@ -235,7 +235,7 @@ const GiftContent = (params: { handleClose: () => void }) => {
 const BintangPage = () => {
   // const gltf = useLoader(
   //   GLTFLoader,
-  //   `${process.env.NEXT_PUBLIC_BASE_URL}/laras.glb`,
+  //   `${process.env.NEXT_PUBLIC_BASE_URL}/Bintang.glb`,
   //   (loader) => {
   //     loader.setDRACOLoader(dLoader);
   //     loader.setRequestHeader({ cache: "no-store" });
@@ -268,21 +268,21 @@ const BintangPage = () => {
 
   const validateIdentity = () => {
     const validData = {
-      name: "PUTRI LARASATI",
+      name: "test",
       date: "1997-06-24",
     };
-    console.log(value);
-    if (validData.date == value.date && validData.name == value.name) {
-      setReady(true);
-    } else {
-      alert("Data Tidak Valid");
-    }
+    setReady(true);
+    //   if (validData.date == value.date && validData.name == value.name) {
+    //   setReady(true);
+    // } else {
+    //   alert("Data Tidak Valid");
+    // }
   };
 
   return ready ? (
     <>
       <button
-        className="absolute top-28 left-4 lg:left-8 flex items-center gap-4 text-black dark:text-white z-[100] font-bold"
+        className="absolute top-28 left-4 lg:left-8 flex items-center gap-4 text-black text-white z-[100] font-bold"
         onClick={() => setLocation("/labs/hbd-my-gf")}
       >
         {params ? <ChevronLeft /> : <Information />}{" "}
@@ -291,7 +291,7 @@ const BintangPage = () => {
       {ready && (
         <Canvas
           camera={{ fov: 75, position: [0, 0, 20] }}
-          className="h-screen w-screen"
+          className="!h-[100dvh] w-screen"
           eventPrefix="client"
         >
           <color attach="background" args={["#ffc8dd"]} />
@@ -304,7 +304,7 @@ const BintangPage = () => {
               args={[isDarkMode ? "#dadada" : "#f0f0f0"]}
             />
             <Sparkles
-              count={1000}
+              count={100}
               scale={[20, 20, 10]}
               size={10}
               speed={1}
@@ -312,7 +312,7 @@ const BintangPage = () => {
               castShadow
               receiveShadow
             />
-            <Laras />
+            <Bintang />
             <GiftBox onClick={() => setGiftOpen(true)} />
             <Envelope onClick={() => setEnvelopeOpen(true)} />
             {/* <primitive
@@ -339,9 +339,9 @@ const BintangPage = () => {
       </AnimatePresence>
     </>
   ) : (
-    <div className="h-screen px-4 w-screen flex items-center bg-white dark:bg-black justify-center">
+    <div className="!h-[100dvh] px-4 w-screen flex items-center bg-black justify-center">
       <div className="flex w-full md:w-[450px] flex-col gap-4">
-        <div className="flex flex-col gap-2 dark:text-white">
+        <div className="flex flex-col gap-2 text-white">
           <label htmlFor="" className="font-bold ">
             Nama
           </label>
@@ -353,12 +353,12 @@ const BintangPage = () => {
                 name: e.target.value.toUpperCase(),
               }))
             }
-            className="focus:outline-none w-full h-[55px] border-2 rounded-md  dark:text-black"
+            className="focus:outline-none w-full h-[55px] border-2 rounded-md  text-black"
             placeholder="Masukan Nama"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="" className="font-bold dark:text-white">
+          <label htmlFor="" className="font-bold text-white">
             Tanggal Lahir
           </label>
           <input
@@ -366,12 +366,12 @@ const BintangPage = () => {
             onChange={(e) =>
               setValue((prev) => ({ ...prev, date: e.target.value }))
             }
-            className="focus:outline-none w-full h-[55px] border-2 rounded-md dark:text-black"
+            className="focus:outline-none w-full h-[55px] border-2 rounded-md text-black"
             placeholder="Masukan Nama"
           />
         </div>
         <button
-          className="w-full p-4 border-2 text-black dark:text-white border-black dark:border-white rounded-lg "
+          className="w-full p-4 border-2  text-white border-white rounded-lg "
           onClick={() => validateIdentity()}
         >
           Masuk
