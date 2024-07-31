@@ -9,10 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@carbon/icons-react": "^11.34.0",
+    "@react-spring/web": "^9.7.3",
+    "@react-three/drei": "^9.96.1",
+    "@react-three/fiber": "^8.15.14",
+    "@types/three": "^0.160.0",
+    "file-loader": "^6.2.0",
+    "file-saver": "^2.0.5",
     "firebase": "^10.12.4",
+    "flowbite": "^2.4.1",
+    "flowbite-react": "^0.10.1",
+    "framer-motion": "^10.18.0",
+    "fs": "^0.0.1-security",
+    "moment": "^2.30.1",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.0.1",
+    "three": "^0.160.0",
+    "threejs-meshline": "^2.0.12",
+    "url-loader": "^4.1.1",
+    "uuid": "^9.0.1",
+    "wouter": "^3.1.2"
   },
   "devDependencies": {
     "@types/node": "^20",
