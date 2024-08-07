@@ -29,6 +29,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import Bintang from "@/components/atoms/Bintang";
 import GiftBox from "@/components/atoms/Gift_box";
 import Envelope from "@/components/atoms/Envelope";
+import Iphone from "@/components/atoms/Iphone";
 extend(geometry);
 
 const dLoader = new DRACOLoader();
@@ -131,7 +132,7 @@ const EnvelopeContent = (params: { handleClose: () => void }) => {
       <motion.div
         initial={{ y: "100%", x: "-50%" }}
         animate={{ y: "-50%", x: "-50%" }}
-        className="fixed left-1/2 bg-white -translate-x-1/2 w-full md:w-[450px] p-4 h-[100dvh] md:h-max top-1/2 -translate-y-1/2 flex flex-col gap-4 z-[200] rounded-md"
+        className="fixed left-1/2 bg-white text-black -translate-x-1/2 w-full md:w-[450px] lg:max-h-[50dvh] overflow-y-auto p-4 h-[100dvh] md:h-max top-1/2 -translate-y-1/2 flex flex-col gap-4 z-[200] rounded-md"
       >
         <button
           onClick={params.handleClose}
@@ -139,28 +140,59 @@ const EnvelopeContent = (params: { handleClose: () => void }) => {
         >
           <Close /> Close
         </button>
-        <p>
-          Haii pacarkuuu yang paling ku sayangg {':"('} I love youu so muchhhhh
-          💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗💗!!!!
+        <p className="text-balance text-sm">
+          Selamat merayakan hari lahir, Sayang! 🥳🥳
         </p>
-        <p>Happy Birthday ya sayanggku !! {':"('}</p>
-        <p>
-          Di hari spesialmu ini, aku ingin mengucapkan selamat ulang tahun yang
-          ke-27 dengan penuh cinta dan kebahagiaan. Kamu adalah orang yang
-          paling istimewa dalam hidupku, dan setiap hari bersamamu terasa
-          seperti sebuah petualangan yang luar biasa. Semoga di usia yang baru
-          ini, semua impian dan harapanmu tercapai.
+        <p className="text-balance text-sm">
+          26 tahun sudah kamu hidup di dunia dengan segala rasa pahit & manis yg
+          kamu terima. Segala sesuatu yg terjadi di hidupmu itu sudah menjadi
+          takdir yang Allah tetapkan untukmu, termasuk hadirnya aku ke dalam
+          hidupmu. Aku tahu aku bukan orang yang pertama menyentuh, juga mengisi
+          hatimu. Sebab, sebelumnya kamu sudah pernah jatuh cinta beberapa kali
+          kepada laki-laki selain aku. Tapi, kamu berhasil meyakinkanku kalau yg
+          terakhir akan menang dari yg pertama ataupun kedua. Terbukti jika
+          cinta kita tidak habis di orang lama, kan?
         </p>
-        <p>
-          Terima kasih telah menjadi sumber kebahagiaan dan inspirasi bagi aku.
-          Aku beruntung memiliki kamu di sisiku, dan aku tidak sabar untuk
-          melihat apa yang akan kita capai bersama di masa depan. Semoga tahun
-          ini membawa banyak kebahagiaan, kesehatan, dan kesuksesan untukmu.
+        <p className="text-balance text-sm">
+          <b>Sayang,</b>
+          <br />
+          Semoga di hari lahirmu ini, kamu senantiasa diberi ketabahan dan
+          kesabaran yang lebih dari sebelumnya. <br />
+          Semoga kamu menjadi pribadi yg jauh lebih baik lagi dari diri kamu
+          sebelumnya <br />
+          Semoga kamu bisa meraih apa yang menjadi keinginanmu <br />
+          Semoga kamu selalu dikelilingi orang-orang yang sayang & peduli sama
+          kamu
         </p>
-        <p>
-          Aku mencintaimu lebih dari kata-kata yang bisa menggambarkan. Selamat
-          ulang tahun, cintaku! 🥳❤️
+        <p className="text-balance text-sm">
+          <b>Sayang,</b>
+          <br />
+          Kamu jauh lebih berharga dari yang kamu pikirkan. Oleh karena itu,
+          mencintaimu adalah pekerjaan yang paling menyenangkan untukku
+          <br />
+          Terima kasih sudah menjadi Audi yang selalu ingin tumbuh
+          <br />
+          Terima kasih sudah menjadi Audi yang berani melawan kekhawatiran di
+          kepalamu
+          <br />
+          Terima kasih sudah menjadi Audi yang mau menerimaku dengan segala
+          kekurangan dan hal-hal sederhana yg kupunya.
         </p>
+        <p className="text-balance text-sm">
+          <b>Sayang,</b>
+          <br />
+          Boleh ya aku nemenin kamu untuk tahun depan dan seterusnya?
+          <br />
+          Semoga kita selalu saling membersamai dan melengkapi sampai maut
+          memisahkan kita.
+          <br />
+          Terakhir, selamat ulang tahun buat pasanganku yg selalu aku semogakan
+          menjadi istri dan ibu dari anak-anakku kelak, aku sayang kamu! 💞💞
+        </p>
+        <br />
+        <p className="text-balance text-sm">Dari yg mencintaimu,</p>
+        <br />
+        <p className="text-balance text-sm">Bintang Chandra Bayudana</p>
       </motion.div>
     </>
   );
@@ -182,9 +214,9 @@ const GiftContent = (params: { handleClose: () => void }) => {
     handleCounter();
   };
 
-  useEffect(() => {
-    timer == 5 && params.handleClose();
-  }, [timer]);
+  // useEffect(() => {
+  //   timer == 5 && params.handleClose();
+  // }, [timer]);
 
   return (
     <>
@@ -197,7 +229,9 @@ const GiftContent = (params: { handleClose: () => void }) => {
       <motion.div
         initial={{ y: "100%", x: "-50%" }}
         animate={{ y: "-50%", x: "-50%" }}
-        className="fixed left-1/2 bg-white -translate-x-1/2 w-full md:w-[450px] p-4 h-[100dvh] md:h-max top-1/2 -translate-y-1/2 flex flex-col gap-4 z-[200] rounded-md"
+        className={`fixed left-1/2 ${
+          timer >= 5 ? "" : "bg-white"
+        } text-black -translate-x-1/2 w-full md:w-[450px] p-4 h-[100dvh] md:h-max top-1/2 -translate-y-1/2 flex flex-col gap-4 z-[200] rounded-md`}
       >
         <button
           onClick={params.handleClose}
@@ -214,7 +248,61 @@ const GiftContent = (params: { handleClose: () => void }) => {
               Tutup Mata ya! Kalo ngeliat nanti ga dapet kadonya!!! {":("}
             </p>
           ) : (
-            timer >= 5 && <p className="font-bold text-lg">Coba Buka !</p>
+            timer >= 5 && (
+              <div className="font-bold text-lg">
+                <img
+                  className="h-64 w-full object-contain object-bottom rounded-lg shadow-lg"
+                  src="https://hallmark.brightspotcdn.com/c2/58/31923b274f05a812741527f370e7/digi23-asafariromance-landscape-772x570.jpg"
+                  alt=""
+                />
+
+                <div className="relative px-4 -mt-16">
+                  <div className="p-6 bg-white rounded shadow-xl">
+                    <div className="flex items-baseline mx-auto">
+                      <span className="inline-block bg-blue-200 mx-auto text-blue-800 text-xs px-2 rounded-full uppercase">
+                        INVITATION CARD!
+                      </span>
+                    </div>
+                    <h4 className="font-semibold text-lg leading-tight my-4 ">
+                      HAPPY BIRTHDAYY MY LOVELY BEAUTY HONEY BUNNY SWEETY
+                      NATASYA AUDIA FEIRLY! ❤️❤️
+                      <br />
+                      <span className="text-sm">
+                        YOU{"'"}RE INVITED TO TAMAN SAFARI TRIP WITH AYANG, ON:
+                      </span>
+                    </h4>
+                    <div className="flex flex-col gap-2">
+                      <div className="mt-2">
+                        DATE
+                        <br />
+                        <span className="text-gray-600 text-sm">
+                          SUNDAY, 11TH AUGUST 2024
+                        </span>
+                      </div>
+                      <div className="mt-2">
+                        TIME
+                        <br />
+                        <span className="text-gray-600 text-sm">
+                          07.00 AM (STAND BY AT UR HOME)
+                        </span>
+                      </div>
+                      <div className="mt-2">
+                        DRESSCODE
+                        <br />
+                        <span className="text-gray-600 text-sm">
+                          BLACK & WHITE
+                        </span>
+                      </div>
+                    </div>
+                    <br />
+                    <p className="font-bold">THANK U!</p>
+                    <br />
+                    <p className="font-bold">BEST REGARDS,</p>
+                    <p className="font-bold">BINTANG 😘</p>
+                  </div>
+                </div>
+              </div>
+            )
           )}
 
           {timer == 0 && (
@@ -230,6 +318,52 @@ const GiftContent = (params: { handleClose: () => void }) => {
     </>
   );
 };
+
+const PrankContent = (params: { handleClose: () => void }) => {
+  return (
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="w-screen !h-[100dvh] top-0 left-0 bg-black bg-opacity-50 fixed z-[150]"
+      ></motion.div>
+
+      <motion.div
+        initial={{ y: "100%", x: "-50%" }}
+        animate={{ y: "-50%", x: "-50%" }}
+        className="fixed left-1/2 bg-white text-black -translate-x-1/2 w-full md:w-[450px] p-4 h-[100dvh] md:h-max top-1/2 -translate-y-1/2 flex flex-col gap-4 z-[200] rounded-md"
+      >
+        <button
+          onClick={params.handleClose}
+          className="relative ml-auto flex cursor-pointer items-center gap-2 font-bold z-[100]"
+        >
+          <Close /> Close
+        </button>
+        <video src="/video.mp4" autoPlay className="max-w-full"></video>
+      </motion.div>
+    </>
+  );
+};
+
+const Song = (params: { isPlaying: boolean }) => {
+  const [volume, setVolume] = useState(1); // Volume state (1 is max, 0 is min)
+  const audioRef: any = useRef(null); // Reference to the audio element
+
+  const handleVolumeChange = () => {
+    const newVolume = params.isPlaying ? 1 : 0.1;
+    setVolume(newVolume);
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume;
+    }
+  };
+
+  useEffect(() => {
+    handleVolumeChange();
+  }, [params.isPlaying]);
+
+  return <audio ref={audioRef} hidden src="/song.mp3" autoPlay={true}></audio>;
+};
+
 const PageComponent = () => {
   // const gltf = useLoader(
   //   GLTFLoader,
@@ -256,6 +390,7 @@ const PageComponent = () => {
   const [ready, setReady] = useState<boolean>(false);
   const [envelopeOpen, setEnvelopeOpen] = useState<boolean>(false);
   const [giftOpen, setGiftOpen] = useState<boolean>(false);
+  const [prankOpen, setPrankOpen] = useState<boolean>(false);
   const { isDarkMode } = useDarkMode();
   const [, params] = useRoute("/item/:id");
   const [location, setLocation] = useLocation();
@@ -266,54 +401,70 @@ const PageComponent = () => {
 
   const validateIdentity = () => {
     const validData = {
-      name: "test",
-      date: "1997-06-24",
+      name: "natasya audia feirly",
+      date: "1998-08-07",
     };
-    setReady(true);
-    //   if (validData.date == value.date && validData.name == value.name) {
-    //   setReady(true);
-    // } else {
-    //   alert("Data Tidak Valid");
-    // }
+    if (
+      validData.date == value.date &&
+      validData.name.toUpperCase() == value.name
+    ) {
+      setReady(true);
+    } else {
+      alert("Data Tidak Valid");
+    }
   };
 
   return ready ? (
     <>
       <button
-        className="absolute top-28 left-4 lg:left-8 flex items-center gap-4 text-black text-white z-[100] font-bold"
+        className="absolute top-4 lg:top-8 left-4 lg:left-8 flex items-center gap-4 text-black z-[100] font-bold"
         onClick={() => setLocation("/bintang")}
       >
-        {params ? <ChevronLeft /> : <Information />}{" "}
+        {params ? <ChevronLeft /> : <Information />}
         {params ? " Back" : " Double click to enter portal"}
       </button>
       {ready && (
-        <Canvas
-          camera={{ fov: 75, position: [0, 0, 20] }}
-          className="!h-[100dvh] w-screen"
-          eventPrefix="client"
-        >
-          <color attach="background" args={["#ffc8dd"]} />
-          <directionalLight position={[3.3, 1.0, 4.4]} intensity={4} />
-          <ambientLight intensity={10} />
-          <Frame id="02" name="tea" author="Omar Faruq Tawsif">
-            <Environment preset="forest" />
-            <color
-              attach="background"
-              args={[isDarkMode ? "#dadada" : "#f0f0f0"]}
-            />
-            <Sparkles
-              count={100}
-              scale={[20, 20, 10]}
-              size={10}
-              speed={1}
-              color={"white"}
-              castShadow
-              receiveShadow
-            />
-            <Bintang />
-            <GiftBox onClick={() => setGiftOpen(true)} />
-            <Envelope onClick={() => setEnvelopeOpen(true)} />
-            {/* <primitive
+        <>
+          <Song isPlaying={!prankOpen} />
+          <Canvas
+            camera={{ fov: 75, position: [0, 0, 20] }}
+            className="!h-[100dvh] w-screen"
+            eventPrefix="client"
+          >
+            <color attach="background" args={["#ffc8dd"]} />
+            <directionalLight position={[3.3, 1.0, 4.4]} intensity={4} />
+            <ambientLight intensity={10} />
+            <Frame id="02" name="tea" author="Omar Faruq Tawsif">
+              <Environment preset="forest" />
+              <color
+                attach="background"
+                args={[isDarkMode ? "#dadada" : "#f0f0f0"]}
+              />
+              <Sparkles
+                count={5}
+                scale={[20, 20, 10]}
+                size={10}
+                speed={1}
+                color={"yellow"}
+                castShadow
+                receiveShadow
+              />
+              <Bintang />
+              <GiftBox
+                position={[-0.8, -0.33, -4, 2]}
+                scale={[0.5, 0.5, 0.5]}
+                onClick={() => setGiftOpen(true)}
+              />
+              <Iphone
+                position={[-0.3, -0.33, -4, 2]}
+                scale={[0.1, 0.1, 0.1]}
+                onClick={() => setPrankOpen(true)}
+              />
+              <Envelope
+                onClick={() => setEnvelopeOpen(true)}
+                position={[1, -0.33, -3.7]}
+              />
+              {/* <primitive
               onClick={() => setGiftOpen(true)}
               object={giftBox.scene}
               position={[1.3, -2.3, -9.5]}
@@ -325,15 +476,17 @@ const PageComponent = () => {
               position={[-1, -1.3, -6.5]}
               dispose={null}
             /> */}
-          </Frame>
-          <Rig />
-        </Canvas>
+            </Frame>
+            <Rig />
+          </Canvas>
+        </>
       )}
       <AnimatePresence>
         {envelopeOpen && (
           <EnvelopeContent handleClose={() => setEnvelopeOpen(false)} />
         )}
         {giftOpen && <GiftContent handleClose={() => setGiftOpen(false)} />}
+        {prankOpen && <PrankContent handleClose={() => setPrankOpen(false)} />}
       </AnimatePresence>
     </>
   ) : (
