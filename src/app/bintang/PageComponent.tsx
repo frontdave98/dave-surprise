@@ -257,36 +257,36 @@ const GiftContent = (params: { handleClose: () => void }) => {
                 />
 
                 <div className="relative px-4 -mt-16">
-                  <div className="p-6 bg-white rounded shadow-xl">
+                  <div className="p-6 bg-white rounded shadow-xl overflow-y-auto max-h-[55vh] max-h-[55dvh]">
                     <div className="flex items-baseline mx-auto">
                       <span className="inline-block bg-blue-200 mx-auto text-blue-800 text-xs px-2 rounded-full uppercase">
                         INVITATION CARD!
                       </span>
                     </div>
-                    <h4 className="font-semibold text-lg leading-tight my-4 ">
+                    <h4 className="font-semibold text-md leading-tight my-2 ">
                       HAPPY BIRTHDAYY MY LOVELY BEAUTY HONEY BUNNY SWEETY
                       NATASYA AUDIA FEIRLY! ❤️❤️
                       <br />
-                      <span className="text-sm">
+                      <span className="text-xs">
                         YOU{"'"}RE INVITED TO TAMAN SAFARI TRIP WITH AYANG, ON:
                       </span>
                     </h4>
                     <div className="flex flex-col gap-2">
-                      <div className="mt-2">
+                      <div className="mt-2 text-sm">
                         DATE
                         <br />
                         <span className="text-gray-600 text-sm">
                           SUNDAY, 11TH AUGUST 2024
                         </span>
                       </div>
-                      <div className="mt-2">
+                      <div className="mt-2 text-sm">
                         TIME
                         <br />
                         <span className="text-gray-600 text-sm">
                           07.00 AM (STAND BY AT UR HOME)
                         </span>
                       </div>
-                      <div className="mt-2">
+                      <div className="mt-2 text-sm">
                         DRESSCODE
                         <br />
                         <span className="text-gray-600 text-sm">
@@ -339,7 +339,12 @@ const PrankContent = (params: { handleClose: () => void }) => {
         >
           <Close /> Close
         </button>
-        <video src="/video.mp4" autoPlay className="max-w-full"></video>
+        <video
+          src="/video.mp4"
+          autoPlay
+          controls
+          className="max-w-full max-h-[60dvh]"
+        ></video>
       </motion.div>
     </>
   );
@@ -387,7 +392,7 @@ const PageComponent = () => {
   //     loader.setDRACOLoader(dLoader);
   //   }
   // );
-  const [ready, setReady] = useState<boolean>(false);
+  const [ready, setReady] = useState<boolean>(true);
   const [envelopeOpen, setEnvelopeOpen] = useState<boolean>(false);
   const [giftOpen, setGiftOpen] = useState<boolean>(false);
   const [prankOpen, setPrankOpen] = useState<boolean>(false);
